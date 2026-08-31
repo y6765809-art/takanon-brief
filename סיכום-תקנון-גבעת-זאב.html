@@ -55,6 +55,23 @@ td.hl{font-weight:800;color:var(--far)}td.ok{font-weight:800;color:var(--brand)}
 .step{position:relative;padding:13px 48px 13px 15px;margin:11px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;counter-increment:s;box-shadow:var(--shadow)}
 .step::before{content:counter(s);position:absolute;inset-inline-start:13px;top:13px;width:27px;height:27px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
 .foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.gchart{margin:16px 0}
+.gbar-row{margin:11px 0}
+.gbar-lbl{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:4px}
+.gbar-lbl .c{color:var(--muted);font-size:12px}
+.gbar{display:flex;height:26px;border-radius:8px;overflow:hidden;background:var(--line);gap:2px}
+.gseg{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;min-width:18px;white-space:nowrap}
+.gseg.t{background:var(--brand)}.gseg.e{background:var(--accent)}.gseg.n{background:#94a3b8}
+:root[data-theme="dark"] .gseg.n,.gseg.n{color:#fff}
+.glegend{display:flex;gap:16px;font-size:12px;color:var(--sub);margin-top:10px;flex-wrap:wrap}
+.glegend span{display:flex;align-items:center;gap:5px}.gdot{width:11px;height:11px;border-radius:3px;display:inline-block}
+.calc{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;align-items:end;margin:12px 0 4px}
+.calc label{font-size:12px;color:var(--sub);display:block;margin-bottom:3px}
+.calc select{width:100%;padding:8px;border:1px solid var(--line);border-radius:9px;background:var(--card2);color:var(--ink);font-family:inherit;font-size:14px}
+.calc .out{background:var(--brand);color:#fff;border-radius:11px;padding:9px 16px;text-align:center;min-width:110px}
+.calc .out .num{font-size:22px;font-weight:800;line-height:1.1}.calc .out .cur{font-size:11px;opacity:.9}
+@media(max-width:620px){.calc{grid-template-columns:1fr 1fr}.calc .out{grid-column:1/-1}}
+@media print{.calc select{-webkit-print-color-adjust:exact}.gseg{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media (max-width:620px){.stats{grid-template-columns:repeat(2,1fr)}.toc ol{columns:1}}
 @media print{
   body{background:#fff;color:#000;font-size:12pt}
@@ -145,6 +162,22 @@ td.hl{font-weight:800;color:var(--far)}td.ok{font-weight:800;color:var(--brand)}
     </tbody>
   </table>
   <p><span class="tag">מדוד מהנתונים</span> בדירות ה<b>קרובות</b> — כ-21% נקבו מחיר גבוה משלהן. בדירות ה<b>רחוקות</b> — כמעט אף אחת (רק דירה אחת מ-49), ו-40% הצהירו תקנון.</p>
+  <div class="gchart">
+    <div class="gbar-row">
+      <div class="gbar-lbl"><span>📍 <b>עד 10 דק'</b> (קרוב)</span><span class="c">95 דירות</span></div>
+      <div class="gbar"><div class="gseg t" style="width:28%">28%</div><div class="gseg e" style="width:21%">21%</div><div class="gseg n" style="width:51%">51%</div></div>
+    </div>
+    <div class="gbar-row">
+      <div class="gbar-lbl"><span>📍 <b>11–20 דק'</b> (רחוק)</span><span class="c">49 דירות</span></div>
+      <div class="gbar"><div class="gseg t" style="width:40%">40%</div><div class="gseg e" style="width:2%"></div><div class="gseg n" style="width:58%">58%</div></div>
+    </div>
+    <div class="glegend">
+      <span><i class="gdot" style="background:var(--brand)"></i> הצהירו תקנון</span>
+      <span><i class="gdot" style="background:var(--accent)"></i> מחיר גבוה משלהם</span>
+      <span><i class="gdot" style="background:#94a3b8"></i> לא צוין מחיר</span>
+    </div>
+    <p class="src" style="margin-top:8px">רואים בעין: הפס הכתום (מחיר גבוה) בולט בדירות הקרובות — וכמעט נעלם ברחוקות.</p>
+  </div>
   <div class="box proof">
     <h3>ההוכחה — מדוע דווקא הקרובות חורגות</h3>
     <p style="margin:0">בחג <b>אי-אפשר לנסוע</b> — חייבים ללכת ברגל לבית הכנסת של הרבי. לכן <b>קרבה היא צורך שאי-אפשר להחליף</b>: שוכר לא יכול "לפצות" על דירה רחוקה ברכב. משמעות כלכלית: לבעלי הדירות הקרובות יש <b>כוח-שוק מקומי</b> (כמעט מונופול על המרחק), והם מעלים מחיר — בעוד הרחוקות, שאין להן כוח כזה, נשארות בתקנון. <b>מסקנה מוכחת:</b> זו אינה "יוקרה" של הדירה אלא <b>פרמיית-מיקום כפויה</b> — בדיוק מה שהתקנון נועד לרסן.</p>
@@ -211,6 +244,18 @@ td.hl{font-weight:800;color:var(--far)}td.ok{font-weight:800;color:var(--brand)}
     <div class="step"><b>שיבוץ מוקדם — שבועות לפני החג.</b> הפחד "לא תהיה לי דירה" — ששחק את ההרתעה — נעלם, כי לכל נרשם מובטח שיבוץ הוגן. הסרת הלחץ = החזרת התקנון.</div>
   </div>
 
+  <div class="box">
+    <h3 style="margin-top:0">🧮 הדגמה חיה: מחשבון התקנון</h3>
+    <p class="src" style="margin-top:0">כך תיראה ליבת המערכת — מחיר מחושב אוטומטית לכל דירה (לפי טבלת ראש השנה תשפ"ו). בחר מאפיינים:</p>
+    <div class="calc">
+      <div><label>מספר מיטות</label><select id="c-beds"></select></div>
+      <div><label>מספר חדרים</label><select id="c-rooms"><option value="0">עד 3</option><option value="1">4</option><option value="2">5+</option></select></div>
+      <div><label>מרחק הליכה</label><select id="c-dist"><option value="0">עד 10 דק'</option><option value="1">עד 20 דק'</option><option value="2">מעל 20 דק'</option></select></div>
+      <div class="out"><div class="num" id="c-out">–</div><div class="cur">₪ לחג</div></div>
+    </div>
+    <p class="src" style="margin-top:6px">במערכת האמיתית יתווספו עשרות משתנים (שטח, קומה, מיזוג, ציוד, חצר) ומרחק מדויק ממפה.</p>
+  </div>
+
   <h2 id="rollout">9 · היישום — פלטפורמה קהילתית ב-4 שלבים</h2>
   <p>מעבר חד נכשל; מעבר <b>הדרגתי ומבוסס-תמריצים</b> מצליח. כך מניעים את התהליך:</p>
   <div class="num">
@@ -263,5 +308,17 @@ td.hl{font-weight:800;color:var(--far)}td.ok{font-weight:800;color:var(--brand)}
     מסמך עבודה · הוכן מתוך ניתוח אוטומטי של מודעות דירה · אינו כולל פרטי דירות או מספרי טלפון · נועד לדיון פנימי לשמירת התקנון לטובת השוכרים — החסידים הבאים לאדמו"ר לחג.
   </div>
 </div>
+<script>
+(function(){
+  var TAK={2:[1190,1380,1570,1090,1240,1390,1050,1140,1240],3:[1440,1630,1820,1310,1440,1590,1250,1340,1440],4:[1690,1880,2070,1530,1640,1790,1450,1540,1640],5:[1940,2130,2320,1750,1840,1990,1650,1740,1840],6:[2190,2380,2570,1970,2040,2190,1850,1940,2040],7:[2440,2630,2820,2190,2240,2390,2050,2140,2240],8:[2690,2880,3070,2410,2440,2590,2250,2340,2440],9:[2940,3130,3320,2630,2640,2790,2450,2540,2640],10:[3190,3380,3570,2850,2840,2990,2650,2740,2840],11:[3440,3630,3820,3070,3040,3190,2850,2940,3040],12:[3690,3880,4070,3290,3240,3390,3050,3140,3240],13:[3940,4130,4320,3510,3440,3590,3250,3340,3440],14:[4190,4380,4570,3730,3640,3790,3450,3540,3640],15:[4440,4630,4820,3950,3840,3990,3650,3740,3840]};
+  var beds=document.getElementById('c-beds'); if(!beds) return;
+  for(var b=2;b<=15;b++){var o=document.createElement('option');o.value=b;o.textContent=b;beds.appendChild(o);}
+  beds.value=6;
+  var rooms=document.getElementById('c-rooms'), dist=document.getElementById('c-dist'), out=document.getElementById('c-out');
+  function calc(){var p=TAK[beds.value][(+dist.value)*3+(+rooms.value)];out.textContent=p.toLocaleString();}
+  [beds,rooms,dist].forEach(function(s){s.addEventListener('change',calc);});
+  calc();
+})();
+</script>
 </body>
 </html>
