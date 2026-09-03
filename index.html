@@ -170,22 +170,66 @@ tbody tr:last-child td{border-bottom:0}
   th{background:#0a463d!important;color:#fff!important}
 }
 @media (max-width:620px){h1{font-size:27px}h2{font-size:22px}}
+
+/* ===== premium / editorial pass ===== */
+header{position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:0;background:radial-gradient(130% 90% at 50% -15%,rgba(255,255,255,.075),transparent 62%);pointer-events:none}
+header .wrap{padding:0;position:relative;z-index:1}
+.nameplate{position:relative;margin:32px auto;padding:42px 36px;text-align:center;border:1px solid rgba(216,173,94,.55)}
+.nameplate::before{content:"";position:absolute;inset:7px;border:1px solid rgba(216,173,94,.22);pointer-events:none}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:15px;margin:0 0 18px;font-weight:600;font-size:12px;letter-spacing:.16em;color:var(--gold)}
+.eyebrow::before,.eyebrow::after{content:"";height:1px;width:40px;background:rgba(216,173,94,.6)}
+h1{font-size:36px;line-height:1.24;margin:0}
+.rule-orn{display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0}
+.rule-orn::before,.rule-orn::after{content:"";height:1px;width:66px;background:linear-gradient(to var(--_d,left),rgba(216,173,94,0),rgba(216,173,94,.65))}
+.rule-orn::after{--_d:right}
+.rule-orn span{color:var(--gold);font-size:13px}
+header .sub{max-width:56ch;margin:0 auto;font-size:15.5px;color:rgba(255,255,255,.9)}
+header .meta{max-width:72ch;margin:18px auto 0;font-size:12px;color:rgba(255,255,255,.66)}
+.printbtn{margin-top:24px}
+
+/* section rhythm — hairline rules between sections */
+h2{border-top:1px solid var(--line);padding-top:44px;margin-top:58px}
+.wrap>h2:first-of-type{border-top:0;padding-top:8px;margin-top:34px}
+
+/* section number in gold serif */
+h2{color:var(--ink)}
+
+/* stat tiles — gold top accent + serif numerals */
+.stat{position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;top:0;inset-inline:0;height:3px;background:var(--gold)}
+
+/* pull-quote (thesis) */
+.pull{font-family:var(--serif);font-weight:700;font-size:22.5px;line-height:1.55;color:var(--brand-d);border:0;border-inline-start:4px solid var(--gold);padding:6px 24px;margin:28px 0;background:linear-gradient(to left,transparent,var(--brand-t) 220%)}
+.pull b{color:var(--brand-d)}
+@media (prefers-color-scheme:dark){.pull,.pull b{color:var(--brand)}}
+
+/* refined tags, selection, footer */
+::selection{background:rgba(176,129,44,.24)}
+.foot{border-top:2px solid var(--line);margin-top:52px}
+.box.key{border-inline-start:4px solid var(--gold)}
+
+@media (max-width:620px){.nameplate{padding:30px 20px}h1{font-size:26px}.pull{font-size:19px}}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <div class="eyebrow">קהילת קרלין־סטולין · גבעת זאב</div>
-    <h1>תמחור השכרת דירות לחגים מול התקנון — ניתוח נתונים והצעת פתרון</h1>
-    <div class="sub">מסמך עבודה מפורט לוועד ולמי שמטפל בתקנון</div>
-    <div class="meta">מבוסס על ניתוח ~461 מודעות דירה שפורסמו בקהילה (2022–2026, כולל העונה הנוכחית). ללא פרטי דירות או מספרי טלפון.</div>
-    <button class="printbtn" onclick="window.print()">הדפסה / שמירה כ־PDF</button>
+    <div class="nameplate">
+      <div class="eyebrow"><span>קהילת קרלין־סטולין · גבעת זאב</span></div>
+      <h1>תמחור השכרת דירות לחגים מול התקנון</h1>
+      <div class="rule-orn"><span>✦</span></div>
+      <div class="sub">ניתוח נתונים והצעת פתרון · מסמך עבודה מפורט לוועד ולמי שמטפל בתקנון</div>
+      <div class="meta">מבוסס על ניתוח ~461 מודעות דירה שפורסמו בקהילה (2022–2026, כולל העונה הנוכחית) · ללא פרטי דירות או מספרי טלפון</div>
+      <button class="printbtn" onclick="window.print()">הדפסה / שמירה כ־PDF</button>
+    </div>
   </div>
 </header>
 
 <div class="wrap">
 
   <p class="lead"><b>מטרת המסמך:</b> לספק בסיס-נתונים מסודר והצעת-פעולה מעשית לשמירת מחירים הוגנים לשוכרים — החסידים הבאים לאדמו"ר לחג — מבלי לפגוע בהיצע. המסמך מציג את הממצאים, את ההוכחה לכל טענה, ואת ההיגיון שמאחורי הפתרון המוצע.</p>
+  <blockquote class="pull">כל עוד ה<b>מחיר</b> הוא שקובע מי יקבל את הדירה הקרובה — הוא ימשיך לעלות. הפתרון אינו עוד היצע, אלא <b>דרך הקצאה אחרת</b> — ותקנון שנשמר.</blockquote>
 
   <div class="toc">
     <b>תוכן העניינים</b>
