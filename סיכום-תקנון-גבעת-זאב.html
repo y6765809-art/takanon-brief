@@ -224,6 +224,17 @@ h1{color:#fbe9c2}
 .eyebrow::before,.eyebrow::after,.rule-orn::before,.rule-orn::after{background:rgba(207,169,85,.85)}
 
 @media (max-width:620px){.nameplate{padding:30px 20px}h1{font-size:26px}.pull{font-size:19px}}
+
+/* ===== lighter greens + more gold + gold frame around the document ===== */
+th{background:#15746a}
+.box.solution{background:radial-gradient(135% 95% at 50% -12%,rgba(255,255,255,.08),transparent 60%),#15746a;border:1.5px solid #cfa955}
+.box.solution .src{color:rgba(255,255,255,.8)}
+.step::before{background:#cfa955;color:#0a463d}
+.box.proof{border-inline-start:4px solid var(--gold)}
+h3{color:#15746a}
+@media (prefers-color-scheme:dark){h3{color:var(--brand)}}
+body>.wrap{border:1px solid rgba(207,169,85,.55);border-radius:14px;padding:26px 34px 54px;margin-top:36px;box-shadow:0 6px 28px rgba(28,38,34,.05)}
+@media (max-width:620px){body>.wrap{padding:18px 16px 40px}}
 </style>
 </head>
 <body>
