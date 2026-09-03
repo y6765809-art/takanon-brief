@@ -213,6 +213,16 @@ h2{color:var(--ink)}
 .foot{border-top:2px solid var(--line);margin-top:52px}
 .box.key{border-inline-start:4px solid var(--gold)}
 
+/* header = framed green plaque floating on the page background (not a full green band) */
+header{background:var(--bg);border-bottom:0}
+header::after{display:none}
+header .wrap{padding:0 20px}
+.nameplate{background:radial-gradient(135% 95% at 50% -12%,rgba(255,255,255,.10),transparent 60%),#15746a;border:1.5px solid #cfa955;border-radius:6px;box-shadow:0 14px 46px rgba(13,90,80,.22),0 2px 10px rgba(0,0,0,.05);margin:40px auto 34px;overflow:hidden}
+.nameplate::before{inset:6px;border:1px solid rgba(207,169,85,.45)}
+h1{color:#fbe9c2}
+.eyebrow,.rule-orn span{color:#f2dca6}
+.eyebrow::before,.eyebrow::after,.rule-orn::before,.rule-orn::after{background:rgba(207,169,85,.85)}
+
 @media (max-width:620px){.nameplate{padding:30px 20px}h1{font-size:26px}.pull{font-size:19px}}
 </style>
 </head>
